@@ -15,32 +15,32 @@ while(ch):
 		print("plz check the docker is installed or not")
 		os.system("systemctl start docker")
 	elif(ch==7):
-    print("first find the name of container")
-    os.system("docker ps -a")
-    cont_name=input("enter input name")
-    os.system("docker inspect {0}".format(cont_name))
-  elif(ch==2):
+    		print("first find the name of container")
+    		os.system("docker ps -a")
+    		cont_name=input("enter input name")
+    		os.system("docker inspect {0}".format(cont_name))
+  	elif(ch==2):
 		print("plz check the docker is installed or not")
 		os.system("systemctl stop docker")
 	elif(ch==3):
-    print("showing docker images")
-    os.system("docker images")
-  elif(ch==6):
-    print('''install a container like centOS etc
-    then install the httpd services via yum with command
-    yum install httpd
-    if this doesnt work just stop firwalld from outside the container by stsemctl stop firewalld
-    and stop selinux by setenforce 0
-    and do systemctl restart docker
-    now again do yum install httpd -y
-    and it will get installed and now we have to shift the webpages in cd/var/www/html location
-    as apache looks for webpages at this location
-    now come out of container by ctrl+p+q
-    and do ifconfig and it will give the ip of docker and try using it in browser as http://(ip)
-    and you should able to see the website
-  elif(ch==8):
-    break
-  elif(ch==5):
+    		print("showing docker images")
+    		os.system("docker images")
+  	elif(ch==6):
+    		print('''install a container like centOS etc
+    		then install the httpd services via yum with command
+    		yum install httpd
+    		if this doesnt work just stop firwalld from outside the container by stsemctl stop firewalld
+    		and stop selinux by setenforce 0
+    		and do systemctl restart docker
+    		now again do yum install httpd -y
+    		and it will get installed and now we have to shift the webpages in cd/var/www/html location
+    		as apache looks for webpages at this location
+    		now come out of container by ctrl+p+q
+    		and do ifconfig and it will give the ip of docker and try using it in browser as http://(ip)
+    		and you should able to see the website''')
+  	elif(ch==8):
+    		break
+  	elif(ch==5):
 		print("creating multitier architecture")
 		
 		print("checking for wordpress image")
@@ -77,12 +77,12 @@ while(ch):
 		print("Give the name to your container(this name will be used to link): ",end=" ")  
 		name_cont=input()
 		os.system("docker run -dit -e MYSQL_ROOT_PASSWORD={0} -e MYSQL_USER={1} -e MYSQL_PASSWORD={2} 
-    -e MYSQL_DATABASE={3} -v {4}:/var/lib/mysql --name {5} 
-    mysql:5.7".format(rpass,uname,upass,db_name,db_stg_name,name_cont))
-    print('''now the service is deployed and just get the ip address from ifconfig command which is 
-    to be executed in terminal outside the container i.e base os of docker
-    and port no and you can access the service''')
-  ch=int(input("ENTER user choice"))
+    		-e MYSQL_DATABASE={3} -v {4}:/var/lib/mysql --name {5} 
+    		mysql:5.7".format(rpass,uname,upass,db_name,db_stg_name,name_cont))
+    		print('''now the service is deployed and just get the ip address from ifconfig command which is 
+    		to be executed in terminal outside the container i.e base os of docker
+    		and port no and you can access the service''')
+  	ch=int(input("ENTER user choice"))
 
 
 
