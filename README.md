@@ -1,2 +1,2 @@
 # Docker-project
-in this docker project i have provided basic functionalities of docker in a tui format and it also provides a full wordpress container and sql server container connection and working if user chooses the option
+in this docker project i have made a yml file for docker to implement iaac which comprises of wordpress container and mysql server container getting ready and deployed in just one click
